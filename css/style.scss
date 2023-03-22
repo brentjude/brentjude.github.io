@@ -1,0 +1,910 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$primaryFont: 'Raleway', sans-serif;
+
+/* COLORS */
+$primaryColor: #221935;
+$secondaryColor: white;
+$accentColor: #FF9A40;
+
+/* FONT */
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "semi-bold": 600,
+    "bold": 700,
+    "extra-bold": 800,
+    "black": 900
+);
+
+/* COMMON CSS */
+
+.weight-black {
+    font-weight: map-get($font-weights, "black")
+}
+
+.weight-extra-bold {
+    font-weight: map-get($font-weights, extra-bold)
+}
+
+.weight-bold {
+    font-weight: map-get($font-weights, bold)
+}
+
+.weight-semi-bold {
+    font-weight: map-get($font-weights, semi-bold)
+}
+
+.weight-medium {
+    font-weight: map-get($font-weights, medium)
+}
+
+.text-primary {
+    color: $primaryColor;
+}
+
+.text-accent {
+    color: $accentColor;
+}
+
+/* -------------- BODY ---------------- */
+
+/* HERO SECTION */
+
+html, body {
+    margin: 0 auto;
+    width: 95vw;
+    font-family: $primaryFont;
+}
+
+/*SCROLL BAR */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+header {
+    padding-top: 2vh;
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: space-between;  
+}
+
+
+
+.hero-section {
+    height: 98vh;
+    width: 100%;
+    display: flex;
+    
+    &--left {
+        width: 40vw;
+        position: relative;
+        align-self: flex-end;
+
+        img {
+            margin-left: -3vw;
+            height: 47vw;
+        }
+
+        h2 {
+            color: white;
+            font-size: 5vw;
+            font-weight: 600;
+            position: absolute;
+            bottom: 2vh;
+        }
+    }
+
+    &--right {
+        width: 60vw;
+        align-self: flex-end;
+        margin-left: 2vw;
+        
+        .skills {
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .inner-skill {
+            width: 200%;
+            display: flex;
+            flex-direction: flex;
+            animation: marquee 10s linear infinite;
+        }
+
+        ul {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 5px;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 25vh;
+
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        ul li {
+
+            font-size: 1.5vw;
+        }
+
+        h1 {
+            position: relative;
+            line-height: 78.5%;
+            font-weight: 600;
+            font-size: 7.5vw;
+            left: 20px;
+
+            &::before {
+                content: "BRENT JUDE ESPINOSA";
+                color: $accentColor;
+                position: absolute;
+                font-size: 1.5vw;
+                transform: rotate(-90deg);
+                left: -9vw;
+                bottom: 6vw;
+            }
+        }
+    }
+    }
+
+    /* ABOUT */
+
+    .about {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+
+        &--left {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h2 {
+                font-size: 2.5vw;
+            }
+
+            .arrow-line {
+                position: relative;
+                height: 3px;
+                width: 100%;
+                background: $accentColor;
+                margin-top: -5px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 3px;
+                    width: 30px;
+                    right: -5px;
+                    top: -10px;
+                    transform: rotate(45deg);
+                    background: $accentColor;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 3px;
+                    width: 30px;
+                    right: -5px;
+                    bottom: -10px;
+                    transform: rotate(-45deg);
+                    background: $accentColor;
+                }
+            }
+
+
+            a { 
+                font-size: 1vw;
+                display: inline-block;
+                margin-top: 50px;
+                text-decoration: none;
+                color: black;
+            }
+
+            .arrow-southeast {
+                position: relative;
+                display: inline-block;
+                height: 3px;
+                width: 20px;
+                background: $accentColor;
+                transform: rotate(45deg);
+
+                &::before {
+                    position: absolute;
+                    height: 3px;
+                    width: 10px;
+                    background: $accentColor;
+                    right: 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        &--right {
+            position: relative;
+            width: 60%;
+            font-size: 1.2vw;
+            letter-spacing: 1px;
+            line-height: 156.5%;
+            padding: 100px 0;
+            padding-left: 100px;
+
+            p {
+                position: inherit;
+                display: block;
+                top: 50px;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                width: 20vw;
+                top: 50px;
+                left: -3vw;
+                z-index: 0;
+            }
+        }
+    }
+
+
+    /* PORTFOLIO */
+
+    .portfolio {
+        width: 90%;
+        margin: 100px auto;
+
+        &--title {
+            position: relative;
+
+            h2 {
+                position: relative;
+                font-size: 2.5vw;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                top: -100px;
+                z-index: 0;
+            }
+        }
+
+        &--nav {
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15vw;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $accentColor;
+
+            label {
+                font-weight: 600;
+                font-size: 1.2vw;
+                cursor: pointer;
+            }
+
+            input {
+                display: none;
+            }
+
+            span:hover {
+                color: #747474;
+            }
+
+            span {
+                transition: 0.2s ease-in-out;
+            }
+
+            :checked + span {
+                color: $accentColor;
+            }
+        }
+
+        &--grid {
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            .grid-item,
+            .grid-sizer {
+                width: 30%;
+            }
+
+            .grid-item {
+                
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                }
+
+                h3 {
+                    font-size: 1.1vw;
+                }
+            }
+        }
+    }
+
+    /* CONTACT */
+
+    .contact {
+        width: 90%;
+        margin: 0 auto;
+
+        &--title {
+            position: relative;
+            padding-bottom: 100px;
+
+            img {
+                width: 200px;
+                position: absolute;
+                z-index: 0;
+                top: -60px;
+                left: -60px;
+            }
+
+
+            h2 {
+                position: relative;
+                z-index: 1;
+                color: $primaryColor !important;
+            }
+        }
+
+
+        &--form {
+            
+            form {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 50px;
+
+                .form-group {
+                    position: relative;
+    
+                    .form-field {
+                        display: block;
+                        width: 70%;
+                        height: 36px;
+                        border-width: 0 0 1px 0;
+                        border-color: black;
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 400;
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &.not-empty {
+                            + .label {
+                               transform: translateY(-24px);
+                            }
+                        }
+                    }
+
+                    .label {
+                        position: absolute;
+                        top: 10px;
+                        transition: 0.2s ease-in-out;
+                        color: rgb(138, 138, 138)
+                    }
+                }
+
+
+                .field-message {
+                    grid-column: 1/4;
+                    
+                    .form-field {
+                        width: 90%;
+                    }
+                }
+
+                .submit-btn {
+                    cursor: pointer;
+                    border: none;
+                    width: 70%;
+                    grid-column: 3;
+                    grid-row: 3;
+                    padding: 10px 20px !important;
+                    background: $primaryColor !important;
+                    color: $accentColor!important;
+                }
+
+                .submit-btn:hover {
+                    background: $accentColor!important;
+                    color: $primaryColor !important;
+                }
+            }      
+        }
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        position: absolute;
+        left: 0;
+        margin-top: 50px;
+        padding: 20px 5%;
+        width: 90% !important;
+        background-image: url('https://res.cloudinary.com/didnrexct/image/upload/v1642668908/Group_5_fq5dbv.png');
+        background-size: cover;
+        background-position: center center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+
+        .portfolio-name {
+            font-size: 27px;
+            color: white;
+        }
+
+        .links ul {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            li {
+                justify-self: center;
+            }
+
+            a {
+                text-decoration: none !important;
+                color: white;
+
+                &:hover {
+                    color: $primaryColor;
+                }
+            }
+
+        }
+    }
+
+
+
+    /** ======================================
+    =============== MOBILE VIEW ==============
+    =========================================**/
+
+    @media only screen and (max-width: 768px) {
+
+        header {
+            padding-top: 2vh;
+            font-size: 1.5vw;
+            display: flex;
+            justify-content: space-between;  
+            font-size: 24px;
+        }
+        
+        .hero-section {
+            height: 98vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            
+            &--left {
+                width: 100vw;
+                position: relative;
+                align-self: flex-start;
+        
+                img {
+                    margin-top: 5vh;
+                    margin-left: -10vw;
+                    height: 120vw;
+                }
+        
+                h2 {
+                    color: white;
+                    font-size: 50px;
+                    font-weight: 600;
+                    position: absolute;
+                    bottom: 2vh;
+                }
+            }
+        
+            &--right {
+                width: 90vw;
+                align-self: flex-end;
+                margin-left: 2vw;
+        
+                ul {
+                    display: none;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 5px;
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+                    margin-bottom: 25vh;
+                }
+        
+                ul li {
+        
+                    font-size: 18px;
+                }
+        
+                h1 {
+                    position: relative;
+                    line-height: 78.5%;
+                    font-weight: 600;
+                    font-size: 44px;
+                    left: 0px;
+        
+                    &::before {
+                        content: "BRENT JUDE ESPINOSA";
+                        color: $accentColor;
+                        position: absolute;
+                        font-size: 16px;
+                        transform: rotate(-90deg);
+                        left: -27vw;
+                        bottom: 6vw;
+                    }
+                }
+            }
+            }
+        
+            /* ABOUT */
+        
+            .about {
+                width: 90%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+        
+                &--left {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+        
+                    h2 {
+                        font-size: 27px;
+                    }
+        
+                    .arrow-line {
+                        position: relative;
+                        height: 3px;
+                        width: 100%;
+                        background: $accentColor;
+                        margin-top: -5px;
+        
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            height: 3px;
+                            width: 30px;
+                            right: -5px;
+                            top: -10px;
+                            transform: rotate(45deg);
+                            background: $accentColor;
+                        }
+        
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            height: 3px;
+                            width: 30px;
+                            right: -5px;
+                            bottom: -10px;
+                            transform: rotate(-45deg);
+                            background: $accentColor;
+                        }
+                    }
+        
+        
+                    a { 
+                        font-size: 1vw;
+                        display: inline-block;
+                        margin-top: 50px;
+                        text-decoration: none;
+                        color: black;
+                        font-size: 16px;
+                    }
+        
+                    .arrow-southeast {
+                        position: relative;
+                        display: inline-block;
+                        height: 3px;
+                        width: 20px;
+                        background: $accentColor;
+                        transform: rotate(45deg);
+        
+                        &::before {
+                            position: absolute;
+                            height: 3px;
+                            width: 10px;
+                            background: $accentColor;
+                            right: 0;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+        
+                &--right {
+                    position: relative;
+                    width: 100%;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    line-height: 156.5%;
+                    padding: 20px 0;
+                    padding-left: 0px;
+        
+                    p {
+                        position: inherit;
+                        display: block;
+                        top: 50px;
+                        z-index: 1;
+                    }
+        
+                    img {
+                        position: absolute;
+                        width: 60vw;
+                        top: -200px;
+                        left: -25vw;
+                        z-index: -1;
+                    }
+                }
+            }
+        
+        
+            /* PORTFOLIO */
+        
+            .portfolio {
+                width: 90%;
+                margin: 150px auto;
+        
+                &--title {
+                    position: relative;
+        
+                    h2 {
+                        position: relative;
+                        font-size: 27px;
+                        z-index: 1;
+                    }
+        
+                    img {
+                        position: absolute;
+                        top: -100px;
+                        z-index: 0;
+                    }
+                }
+        
+                &--nav {
+                    margin-top: 100px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 20px;
+                    padding: 0 15vw;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid $accentColor;
+        
+                    label {
+                        font-weight: 600;
+                        font-size: 10px;
+                        cursor: pointer;
+                    }
+        
+                    input {
+                        display: none;
+                    }
+        
+                    span:hover {
+                        color: #747474;
+                    }
+        
+                    span {
+                        transition: 0.2s ease-in-out;
+                    }
+        
+                    :checked + span {
+                        color: $accentColor;
+                    }
+                }
+        
+                &--grid {
+                    width: 100%;
+                    margin-top: 50px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: space-between;
+        
+                    a {
+                        text-decoration: none;
+                        color: black;
+                    }
+        
+                    .grid-item,
+                    .grid-sizer {
+                        width: 40%;
+                    }
+        
+                    .grid-item {
+                        
+                        cursor: pointer;
+        
+                        img {
+                            width: 100%;
+                        }
+        
+                        h3 {
+                            font-size: 1.1vw;
+                        }
+                    }
+                }
+            }
+        
+            /* CONTACT */
+        
+            .contact {
+                width: 90%;
+                margin: 0 auto;
+        
+                &--title {
+                    position: relative;
+                    padding-bottom: 100px;
+        
+                    img {
+                        width: 200px;
+                        position: absolute;
+                        z-index: 0;
+                        top: -60px;
+                        left: -60px;
+                    }
+        
+        
+                    h2 {
+                        position: relative;
+                        z-index: 1;
+                        color: $primaryColor !important;
+                    }
+                }
+        
+        
+                &--form {
+                    
+                    form {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        row-gap: 50px;
+        
+                        .form-group {
+                            position: relative;
+            
+                            .form-field {
+                                display: block;
+                                width: 70%;
+                                height: 36px;
+                                border-width: 0 0 1px 0;
+                                border-color: black;
+                                font-size: 18px;
+                                line-height: 26px;
+                                font-weight: 400;
+        
+                                &:focus {
+                                    outline: none;
+                                }
+        
+                                &.not-empty {
+                                    + .label {
+                                       transform: translateY(-24px);
+                                    }
+                                }
+                            }
+        
+                            .label {
+                                position: absolute;
+                                top: 10px;
+                                transition: 0.2s ease-in-out;
+                                color: rgb(138, 138, 138)
+                            }
+                        }
+        
+        
+                        .field-message {
+                            grid-column: 1/4;
+                            
+                            .form-field {
+                                width: 90%;
+                            }
+                        }
+        
+                        .submit-btn {
+                            cursor: pointer;
+                            border: none;
+                            width: 70%;
+                            grid-column: 3;
+                            grid-row: 3;
+                            padding: 10px 20px !important;
+                            background: $primaryColor !important;
+                            color: $accentColor!important;
+                        }
+        
+                        .submit-btn:hover {
+                            background: $accentColor!important;
+                            color: $primaryColor !important;
+                        }
+                    }      
+                }
+            }
+        
+        
+            /* FOOTER */
+        
+            footer {
+                position: absolute;
+                left: 0;
+                margin-top: 50px;
+                padding: 20px 5%;
+                width: 90% !important;
+                background-image: url('https://res.cloudinary.com/didnrexct/image/upload/v1642668908/Group_5_fq5dbv.png');
+                background-size: cover;
+                background-position: center center;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+                align-items: center;
+        
+                .portfolio-name {
+                    font-size: 27px;
+                    color: white;
+                }
+        
+                .links ul {
+                    list-style-type: none;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+        
+                    li {
+                        justify-self: center;
+                    }
+        
+                    a {
+                        text-decoration: none !important;
+                        color: white;
+        
+                        &:hover {
+                            color: $primaryColor;
+                        }
+                    }
+        
+                }
+            }
+        
+        
+    }
