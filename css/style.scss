@@ -129,6 +129,10 @@ header {
             display: flex;
             flex-direction: flex;
             animation: marquee 10s linear infinite;
+
+            &:hover {
+                animation-play-state: paused;
+            }
         }
 
         ul {
