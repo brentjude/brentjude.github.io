@@ -44,3 +44,11 @@ $( '.js-input' ).keyup(function() {
        $(this).removeClass('not-empty');
     }
   });
+
+
+//Display the current year
+var currentYear = new Date().getFullYear();
+
+if (document.readyState) {
+  document.getElementById("current-year").textContent = currentYear;
+}
